@@ -20,7 +20,8 @@ const makesSearchMkp = (query, page) => {
 const makesModalMkp = movieId => {
   const URLMovie = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
-  fetchIt(URLMovie).then(src => {
+  return fetchIt(URLMovie).then(src => {
+    // console.log(src);
     modalOverley.insertAdjacentHTML('beforeend', modalTpl(src));
   });
 };
