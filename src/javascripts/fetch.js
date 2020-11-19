@@ -21,8 +21,8 @@ const makesModalMkp = movieId => {
   const URLMovie = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
   return fetchIt(URLMovie).then(src => {
-    // console.log(src);
-    modalOverley.insertAdjacentHTML('beforeend', modalTpl(src));
+    console.log(src);
+    modalOverley.innerHTML = modalTpl(src);
   });
 };
 

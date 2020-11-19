@@ -17,13 +17,12 @@
     let films = JSON.parse(filmsLocalStorageStr);
 
     if (films.find(film => film.title === filmObj.title)) {
-      alert(`Error: Movie ${film.title} is already added.`);
+      alert(`Error: Movie ${filmObj.title} is already added.`);
       return;
     }
     else {
       films.push(filmObj);
       localStorage.setItem('Queue', JSON.stringify(films))
-      console.log(films)
     }
   }
 

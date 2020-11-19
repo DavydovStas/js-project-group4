@@ -1,5 +1,4 @@
 export default function onButtonWatchedClick() {
-  console.log('onButtonWatchedClick')
   const filmObj = {
       filmId: document.querySelector('.heder-images').dataset.id,
       poster_path: document.querySelector('.image-modal').src,
@@ -18,12 +17,11 @@ export default function onButtonWatchedClick() {
     let filmsArray = JSON.parse(filmsString);
 
     if (filmsArray.find(film => film.title === filmObj.title)) {
-      alert(`Error: Movie ${film.title} is already added.`);
+      alert(`Error: Movie ${filmObj.title} is already added.`);
       return
     }
     else {
       filmsArray.push(filmObj);
       localStorage.setItem('Watched', JSON.stringify(filmsArray))
-      console.log(filmsArray)
     }
   }
